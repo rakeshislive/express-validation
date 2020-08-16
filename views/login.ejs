@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+</head>
+<body>
+    <p><%= status %></p>
+    <h3>A simple form <%= message %></h3><br>
+    <form action="/login" method="POST">
+        <label for="name">Name: </label>
+        <input type="text" id="name" name="name" value="<%= user.name %>"> <br><br>
+        <% if(error.name) { %>
+            <p><%= error.name.msg %></p>
+        <% } %> 
+        <label for="email">Email: </label>
+        <input type="text" id="email" name="email" value="<%= user.email %>"><br><br>
+        <% if(error.email) { %>
+            <p><%= error.email.msg %></p>
+        <% } %> 
+
+        <input type="submit">
+    </form>
+</body>
+</html>
